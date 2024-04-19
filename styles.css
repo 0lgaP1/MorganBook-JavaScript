@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+body {
+    background-color: #a996c9;
+    color:rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 20px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#console {
+    width: 200px;
+    height: 200px;
+    background-color: #e1b230;
+}
+#output {
+    width: 200px;
+    height: 200px;
+    background-color: #304de1;
+}
+
+#randomQuestions {
+    width: 200px;
+    height: 200px;
+    background-color: #30c0e4;
+}
+
+#randomAnswers {
+    width: 200px;
+    height: 200px;
+    background-color: #d6e130;
+}
