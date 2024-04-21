@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -8,33 +9,36 @@ body {
     color:rgb(0, 0, 0);
     font-size: 2rem;
     font-weight: 800;
-    padding: 20px;
-    margin: 30px;
+}
+
+div {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+
+    max-width: 500px;
+
+
+    padding: 10px;
 }
 
 #console {
-    width: 200px;
-    height: 200px;
     background-color: #e1b230;
 }
 #output {
-    width: 200px;
-    height: 200px;
     background-color: #304de1;
 }
 
 #randomQuestions {
-    width: 200px;
-    height: 200px;
     background-color: #30c0e4;
 }
 
 #randomAnswers {
-    width: 200px;
-    height: 200px;
     background-color: #d6e130;
+}
+
+#homework {
+    background-color: #cd2baa;
 }

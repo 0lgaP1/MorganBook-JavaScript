@@ -62,3 +62,26 @@ const randomQuestions = [
     let randomAnswersData = Math.floor(Math.random() * randomAnswers.length);
     randomQuestionsDiv.textContent = randomQuestions[randomQuestionsData];
     randomAnswersDiv.textContent = randomAnswers[randomAnswersData];
+
+// homework related to chapter 3 Arrays
+// compliment generator task 1
+const compliment = ["Smart", "nice", "wice", "awesome", "shiny"]
+let randomComplimentSpan = document.getElementById("randomComplimentSpan");
+let randomWord = Math.floor(Math.random() * compliment.length);
+randomComplimentSpan.textContent = compliment[randomWord];
+
+// compliment generator task 2
+const complimentLevelUp = ["You are not only(randomWord)", "but", "when I see you, I jump up high"]
+const combinedArray = complimentLevelUp.slice(0, 2).concat(compliment[randomWord]);
+const randomSentence = Math.floor(Math.random() * combinedArray.length);
+const randomGeneratedSentence = combinedArray[randomSentence];
+
+let randomComplimentLevelUpSpan = document.getElementById("randomComplimentLevelUpSpan");
+randomComplimentLevelUpSpan.textContent = randomGeneratedSentence;
+
+// join the numbers: [3, 2, 1] to the string "3 больше, чем 2 больше, чем 1"
+
+const numbersArray = [3, 2, 1]
+let numbersArrayString = numbersArray.join(" больше, чем ")
+let numbersArraySpan = document.getElementById("numbersArraySpan");
+numbersArraySpan.textContent = numbersArrayString; 
