@@ -63,21 +63,19 @@ const randomQuestions = [
     randomQuestionsDiv.textContent = randomQuestions[randomQuestionsData];
     randomAnswersDiv.textContent = randomAnswers[randomAnswersData];
 
-// homework related to chapter 3 Arrays
-// compliment generator task 1
-const compliment = ["Smart", "nice", "wice", "awesome", "shiny"]
-let randomComplimentSpan = document.getElementById("randomComplimentSpan");
-let randomWord = Math.floor(Math.random() * compliment.length);
-randomComplimentSpan.textContent = compliment[randomWord];
+// homework to chapter 3 Arrays: compliment generator task 1 + task 2
 
-// compliment generator task 2
-const complimentLevelUp = ["You are not only(randomWord)", "but", "when I see you, I jump up high"]
-const combinedArray = complimentLevelUp.slice(0, 2).concat(compliment[randomWord]);
-const randomSentence = Math.floor(Math.random() * combinedArray.length);
-const randomGeneratedSentence = combinedArray[randomSentence];
+const compliment = ["smart", "nice", "wice", "awesome", "shiny"];
+const complimentLevelUp = ["You are not only", "but", "when I see you, I jump up high"];
 
+const randomWordIndex = Math.floor(Math.random() * compliment.length);
+const randomWord = compliment[randomWordIndex]; // Получаем рандомное слово из массива compliment
+const firstTwoElements = complimentLevelUp.slice(0, 2); // Копируем первые два элемента массива complimentLevelUp
+const combinedArray = firstTwoElements.concat(randomWord, complimentLevelUp.slice(2)); // Вставляем рандомное слово после первых двух элементов
+const randomSentenceIndex = Math.floor(Math.random() * combinedArray.length); // Получаем рандомное предложение
+const randomGeneratedSentence = combinedArray[randomSentenceIndex];
 let randomComplimentLevelUpSpan = document.getElementById("randomComplimentLevelUpSpan");
-randomComplimentLevelUpSpan.textContent = randomGeneratedSentence;
+randomComplimentLevelUpSpan.textContent = randomGeneratedSentence; // Устанавливаем текст в элемент с идентификатором "randomComplimentLevelUpSpan"
 
 // join the numbers: [3, 2, 1] to the string "3 больше, чем 2 больше, чем 1"
 
