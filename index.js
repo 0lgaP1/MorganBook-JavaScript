@@ -83,3 +83,57 @@ const numbersArray = [3, 2, 1]
 let numbersArrayString = numbersArray.join(" больше, чем ")
 let numbersArraySpan = document.getElementById("numbersArraySpan");
 numbersArraySpan.textContent = numbersArrayString; 
+
+// chapter 4 Objects
+// owemoney counter
+
+let owedMoney = {};
+    owedMoney ["Jimmy"] = 7;
+    owedMoney ["Anna"] = 8;
+    owedMoney["Jimmy"]+=5
+let numbersArrayDiv = document.getElementById("objectTasks");
+numbersArrayDiv.textContent = owedMoney["Jimmy"] + " " + JSON.stringify(owedMoney);
+
+// homework : score counter
+
+let scoreObject1 = [
+    {name: Jack,
+    age: 22,
+    scoreNumber: 5},
+
+    {name: Timur,
+    age: 6,
+    scoreNumber: 20},
+
+    {name: Olya,
+    age: 30,
+    scoreNumber: 100},
+];
+const olyaObject = scoreObject1.find(item => item.name === "Olya");
+if (olyaObject) {
+    olyaObject.scoreNumber += 5;
+}
+console.log(scoreObject1);
+
+//or
+
+let scoreObject2 = {};
+    scoreObject["Jack"] = 5;
+    scoreObject["Timur"] = 20;
+    scoreObject["Olya"] = 100;
+    
+    scoreObject2["Timur"] += 20;
+    scoreObject2["Timur"];
+console.log(scoreObject2);
+
+
+// number 123 with the help of 1 string code
+
+let myCrazyObject = {
+    "name": "Нелепый объект",
+    "some array": [7, 9, { purpose: "путаница", number: 123 }, 3.3],
+    "random animal": "Банановая акула"
+    };
+
+let number123 = myCrazyObject["some array"][2].number;
+console.log(number123);
