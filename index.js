@@ -127,7 +127,7 @@ let scoreObject2 = {};
 console.log(scoreObject2);
 
 
-// number 123 with the help of 1 string code
+// chapter 4 Objects - number 123 with the help of 1 string code
 
 let myCrazyObject = {
     "name": "Нелепый объект",
@@ -137,3 +137,28 @@ let myCrazyObject = {
 
 let number123 = myCrazyObject["some array"][2].number;
 console.log(number123);
+
+//chapter 6 Conditions and loops
+
+let userName = "Nicolas";
+console.log("Hi, " + userName);
+if (userName > 6) {
+    debugger
+    console.log("You have too long name!");
+} else {
+        console.log("Your name is quite short!");
+    }
+
+
+//
+
+let userName2 = "Olga";
+if (userName2 === "Olga") {
+    console.log("Hi, " + userName2);
+} else if (userName2 === "Tatyana") {
+    console.log("Hello, mum");
+} else if (userName2 === "Vladimir") {
+    console.log("Hi, dad!");
+} else {
+    console.log("Hi, stranger"); 
+}
