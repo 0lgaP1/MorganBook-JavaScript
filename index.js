@@ -162,3 +162,20 @@ if (userName2 === "Olga") {
 } else {
     console.log("Hi, stranger"); 
 }
+
+// sheeps counter loop - while loop (while: Используется, когда количество итераций неизвестно заранее или когда условие зависит от внешних факторов)
+
+let sheepNumber = 0;
+while (sheepNumber < 10) {
+    console.log("Number of sheeps:" + sheepNumber + "!");
+    sheepNumber++;
+}
+console.log("You felt asleep");
+
+// sheeps counter loop - for loop (for: Часто используется, когда количество итераций известно заранее или когда нужно использовать счётчик для итераций)
+
+for (let sheepNumber = 0; sheepNumber < 10; sheepNumber ++) {
+    console.log("Number of sheeps: " + sheepNumber + "!");
+}
+console.log("You felt asleep");
+
