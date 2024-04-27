@@ -172,10 +172,23 @@ while (sheepNumber < 10) {
 }
 console.log("You felt asleep");
 
-// sheeps counter loop - for loop (for: Часто используется, когда количество итераций известно заранее или когда нужно использовать счётчик для итераций)
+// sheeps counter loop - for loop (for: Часто используется, когда количество итераций известно заранее или когда нужно использовать счётчик для итераций) настройка + условие + приращение
 
 for (let sheepNumber = 0; sheepNumber < 10; sheepNumber ++) {
     console.log("Number of sheeps: " + sheepNumber + "!");
 }
 console.log("You felt asleep");
 
+// for loop to say hello
+
+let timesToSayHello = 3;
+for (var i = 0; i < timesToSayHello; i++) {
+ console.log("Привет!");
+}
+
+// loop to name zoo animals
+
+let zooAnimals = ["слон", "горилла", "носорог", "жираф"];
+for (let i = 0; i < zooAnimals.length; i++) {
+    console.log("В нашем зоопарке вы можете встретить" + zooAnimals[i] + "!");
+}
