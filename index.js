@@ -192,3 +192,14 @@ let zooAnimals = ["слон", "горилла", "носорог", "жираф"];
 for (let i = 0; i < zooAnimals.length; i++) {
     console.log("В нашем зоопарке вы можете встретить" + zooAnimals[i] + "!");
 }
+
+// task 1 for chapter 6
+
+let animals = ["Кот", "Рыба", "Лемур", "Комодский варан"];
+for (let i = 0; i < animals.length; i++) {
+    animals[i] = animals[i] + " прекрасное животное";
+}
+console.log(animals);
+
+// task 2 for chapter 6
+
