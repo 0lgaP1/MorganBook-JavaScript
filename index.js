@@ -97,15 +97,15 @@ numbersArrayDiv.textContent = owedMoney["Jimmy"] + " " + JSON.stringify(owedMone
 // homework : score counter
 
 let scoreObject1 = [
-    {name: Jack,
+    {name: "Lars",
     age: 22,
     scoreNumber: 5},
 
-    {name: Timur,
+    {name: "Timur",
     age: 6,
     scoreNumber: 20},
 
-    {name: Olya,
+    {name: "Olya",
     age: 30,
     scoreNumber: 100},
 ];
@@ -143,12 +143,10 @@ console.log(number123);
 let userName = "Nicolas";
 console.log("Hi, " + userName);
 if (userName > 6) {
-    debugger
     console.log("You have too long name!");
 } else {
         console.log("Your name is quite short!");
     }
-
 
 //
 
@@ -183,7 +181,7 @@ console.log("You felt asleep");
 
 let timesToSayHello = 3;
 for (var i = 0; i < timesToSayHello; i++) {
- console.log("Привет!");
+    console.log("Привет!");
 }
 
 // loop to name zoo animals
@@ -203,3 +201,30 @@ console.log(animals);
 
 // task 2 for chapter 6
 
+let alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+let y = 0;
+while (y < 6 ) {
+    let randomAlfabetIndex = Math.floor(Math.random() * alphabet.length);
+    let randomIndexNumber = alphabet[randomAlfabetIndex];
+    console.log(randomIndexNumber);
+    y++;
+}
+
+// task 3 hacker language
+
+let input = "javascript is awesome";
+let output = "";
+for (let i = 0; i < input.length; i++) {
+    if (input[i] === "a") {
+        output += "4";
+    } else if (input[i] === "e") {
+        output += "3";
+    } else if (input[i] === "i") {
+        output += "1";
+    } else if (input[i] === "o") {
+        output += "0";
+    } else {
+        output += input[i];
+    }
+} // switch case may be used here too:  switch (input[i]) {case "a": output += "4"; break; case "e": output += "3"; break; case "i": output += "1"; break; case "o": output += "0"; break; default: output += input[i]; }
+console.log(output);
