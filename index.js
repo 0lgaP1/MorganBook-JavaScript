@@ -228,3 +228,16 @@ for (let i = 0; i < input.length; i++) {
     }
 } // switch case may be used here too:  switch (input[i]) {case "a": output += "4"; break; case "e": output += "3"; break; case "i": output += "1"; break; case "o": output += "0"; break; default: output += input[i]; }
 console.log(output);
+
+
+    let name = prompt("What is your name?");
+    console.log("Hello, " + name);
+
+    let likesCats = confirm("Do you like cats?");
+    if (likesCats) {
+console.log("Ты классная кошка!");
+} else {
+console.log("No matter, You are nice anyway!");
+}
+
+    alert("JavaScript is awesome!"); //alert prompt config приостанавливают работу интерпретатора JS, console.log идет по строке дальше

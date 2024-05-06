@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hangman</title>
+</head>
+<body>
+    <h1>Hello!</h1>
+    <script>
+
+let words = ["Оладушек", "пирожок", "булочка", "кексик"];
+
+let randomWord = words[Math.floor(Math.random() * words.length)];
+
+let answerArray = [];
+for (let i = 0; i < randomWord.length; i++) {
+    answerArray[i] = "_";
+}
+
+let remainingLetters = randomWord.length; // decrement if the letter was guessed
+
+while (remainingLetters > 0) {
+    alert(answerArray.join(" "));
+    let guess = prompt("Guess a letter or exit the game");
+    if (guess === null) {
+        break;
+    } else if (guess.length !== 1) {
+        alert ("Please pick only one letter!");
+    } else {
+        for (let j = 0; j < randomWord.length; j++) {
+            if (randomWord[j] === guess) {
+                answerArray[j] = guess;
+                remainingLetters--;
+            }
+        }
+    }
+}
+alert(answerArray.join(" "));
+alert("Congratulations, you guessed the word " + randomWord);
+    </script>
+</body>
+</html>
