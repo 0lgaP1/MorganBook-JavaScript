@@ -28,12 +28,19 @@ while (remainingLetters > 0) {
     } else if (guess.length !== 1) {
         alert ("Please pick only one letter!");
     } else {
+        let lowerCaseGuess = guess.toLowerCase();
+        let foundMatch = false;
+
         for (let j = 0; j < randomWord.length; j++) {
-            if (randomWord[j] === guess) {
-                answerArray[j] = guess;
+            if (randomWord[j].toLowerCase() === lowerCaseGuess) { // checking the match of letters
+                answerArray[j] = randomWord[j];
                 remainingLetters--;
+                foundMatch = true;
             }
-        }
+    }
+    if (!foundMatch) {
+        alert("The letter you guessed is not in the word.");
+    }
     }
 }
 alert(answerArray.join(" "));
