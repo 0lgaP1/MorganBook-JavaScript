@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Hangman</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello!</h1>
     <script>
+      let words = ["Оладушек", "пирожок", "булочка", "кексик"];
 
-let words = ["Оладушек", "пирожок", "булочка", "кексик"];
+      let randomWord = words[Math.floor(Math.random() * words.length)];
 
-let randomWord = words[Math.floor(Math.random() * words.length)];
+      let answerArray = [];
+      for (let i = 0; i < randomWord.length; i++) {
+        answerArray[i] = "_";
+      }
 
-let answerArray = [];
-for (let i = 0; i < randomWord.length; i++) {
-    answerArray[i] = "_";
-}
+      let remainingLetters = randomWord.length; // decrement if the letter was guessed
+      let attemps = randomWord.length;
 
-let remainingLetters = randomWord.length; // decrement if the letter was guessed
+      while (remainingLetters > 0 && attemps > 0) {
+        alert(answerArray.join(" "));
+        let guess = prompt("Guess a letter or exit the game");
+        if (guess === null) {
+          break;
+        } else if (guess.length !== 1) {
+          alert("Please pick only one letter!");
+        } else {
+          let lowerCaseGuess = guess.toLowerCase();
+          let foundMatch = false;
 
-while (remainingLetters > 0) {
-    alert(answerArray.join(" "));
-    let guess = prompt("Guess a letter or exit the game");
-    if (guess === null) {
-        break;
-    } else if (guess.length !== 1) {
-        alert ("Please pick only one letter!");
-    } else {
-        let lowerCaseGuess = guess.toLowerCase();
-        let foundMatch = false;
-
-        for (let j = 0; j < randomWord.length; j++) {
-            if (randomWord[j].toLowerCase() === lowerCaseGuess) { // checking the match of letters
-                answerArray[j] = randomWord[j];
-                remainingLetters--;
-                foundMatch = true;
+          for (let j = 0; j < randomWord.length; j++) {
+            if (randomWord[j].toLowerCase() === lowerCaseGuess) {
+              // checking the match of letters
+              answerArray[j] = randomWord[j];
+              remainingLetters--;
+              foundMatch = true;
             }
-    }
-    if (!foundMatch) {
-        alert("The letter you guessed is not in the word.");
-    }
-    }
-}
-alert(answerArray.join(" "));
-alert("Congratulations, you guessed the word " + randomWord);
+          }
+          if (!foundMatch) {
+            alert("The letter you guessed is not in the word.");
+            attemps--;
+          }
+        }
+      }
+      if (remainingLetters === 0 ) {
+        alert(answerArray.join(" "));
+        alert("Congratulations, you guessed the word " + randomWord);
+      }
+      else {
+        alert("You ran out of attempts. The word was " + randomWord);
+      }
+      
     </script>
-</body>
+  </body>
 </html>
