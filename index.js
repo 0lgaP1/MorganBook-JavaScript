@@ -241,3 +241,15 @@ console.log("No matter, You are nice anyway!");
 }
 
     alert("JavaScript is awesome!"); //alert prompt config приостанавливают работу интерпретатора JS, console.log идет по строке дальше
+
+// chapter 8 Functions
+let drawCats = function (howManyTimes) {
+    let cats = "";
+    for (let i = 0; i < howManyTimes; i++) {
+    cats += i + " =^.^= ";
+    }
+    return cats;
+};
+let drawCatsString = drawCats(5);
+let drawCatsDiv = document.getElementById("functions");
+drawCatsDiv.textContent = drawCatsString;
