@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>Chapter 8</h1>
+    <script>
+
+// saying hello 
+      let sayHelloTo = function (name) {
+    console.log("Hi, " + name + "!");
+};
+sayHelloTo("Anna");
+
+// drawing cats with 1 argument
+
+let drawCats2 = function (howManyTimes2) {
+    for (let i = 0; i < howManyTimes2; i++) {
+        console.log(i + " =^.^=");
+    }
+}
+drawCats2(3);
+
+// drawing smiles with multiple arguments
+
+let useMultipleArg = function (howManyTimes3, whatToDraw) {
+  for (let i = 0; i < howManyTimes3; i++) {
+    console.log(i + " " + whatToDraw);
+  };
+}
+useMultipleArg(4, ":)");
+
+// return function
+let double = function (number) {
+  return number * 2;
+};
+console.log(double(5) + double(10));
+
+    </script>
+  </body>
+</html>

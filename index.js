@@ -48,6 +48,10 @@ const randomQuestions = [
     "Ты должен мне денег"
     ];
 
+    let randomQuestionsDiv = document.getElementById("randomQuestions");    
+    let randomQuestionsData = Math.floor(Math.random() * randomQuestions.length);
+    randomQuestionsDiv.textContent = randomQuestions[randomQuestionsData];
+
     const randomAnswers = [
         "Звучит неплохо",
         "Да, это определенно надо сделать",
@@ -56,33 +60,32 @@ const randomQuestions = [
         "Компьютер говорит нет"
         ];
 
-    let randomQuestionsDiv = document.getElementById("randomQuestions");
     let randomAnswersDiv = document.getElementById("randomAnswers");
-    let randomQuestionsData = Math.floor(Math.random() * randomQuestions.length);
     let randomAnswersData = Math.floor(Math.random() * randomAnswers.length);
-    randomQuestionsDiv.textContent = randomQuestions[randomQuestionsData];
     randomAnswersDiv.textContent = randomAnswers[randomAnswersData];
 
 // homework to chapter 3 Arrays: compliment generator task 1 + task 2
 
 const compliment = ["smart", "nice", "wice", "awesome", "shiny"];
-const complimentLevelUp = ["You are not only", "but", "when I see you, I jump up high"];
-
 const randomWordIndex = Math.floor(Math.random() * compliment.length);
-const randomWord = compliment[randomWordIndex]; // Получаем рандомное слово из массива compliment
-const firstTwoElements = complimentLevelUp.slice(0, 2); // Копируем первые два элемента массива complimentLevelUp
-const combinedArray = firstTwoElements.concat(randomWord, complimentLevelUp.slice(2)); // Вставляем рандомное слово после первых двух элементов
-const randomSentenceIndex = Math.floor(Math.random() * combinedArray.length); // Получаем рандомное предложение
-const randomGeneratedSentence = combinedArray[randomSentenceIndex];
+const randomWord = compliment[randomWordIndex]; // Получаем рандомное слово из массива compliment при помощи его индекса
+let randomComplimentSpan = document.getElementById("randomComplimentSpan");
+randomComplimentSpan.textContent = randomWord;
+
+
+const complimentLevelUp = ["You are kind and ", "You are beautiful and "];
+const randomWordLevelUpIndex = Math.floor(Math.random()* complimentLevelUp.length); 
+const randomWordLevelUpSentence = complimentLevelUp[randomWordLevelUpIndex];
+
 let randomComplimentLevelUpSpan = document.getElementById("randomComplimentLevelUpSpan");
-randomComplimentLevelUpSpan.textContent = randomGeneratedSentence; // Устанавливаем текст в элемент с идентификатором "randomComplimentLevelUpSpan"
+randomComplimentLevelUpSpan.textContent = randomWordLevelUpSentence; // Устанавливаем текст в элемент с идентификатором "randomComplimentLevelUpSpan"
 
 // join the numbers: [3, 2, 1] to the string "3 больше, чем 2 больше, чем 1"
 
 const numbersArray = [3, 2, 1]
 let numbersArrayString = numbersArray.join(" больше, чем ")
-let numbersArraySpan = document.getElementById("numbersArraySpan");
-numbersArraySpan.textContent = numbersArrayString; 
+let numbersArrayDiv = document.getElementById("numbersArray");
+numbersArrayDiv.textContent = numbersArrayString; 
 
 // chapter 4 Objects
 // owemoney counter
@@ -91,8 +94,8 @@ let owedMoney = {};
     owedMoney ["Jimmy"] = 7;
     owedMoney ["Anna"] = 8;
     owedMoney["Jimmy"]+=5
-let numbersArrayDiv = document.getElementById("objectTasks");
-numbersArrayDiv.textContent = owedMoney["Jimmy"] + " " + JSON.stringify(owedMoney);
+let objectTasksDiv = document.getElementById("objectTasks");
+objectTasksDiv.textContent = owedMoney["Jimmy"] + " " + JSON.stringify(owedMoney);
 
 // homework : score counter
 
@@ -118,7 +121,7 @@ console.log(scoreObject1);
 //or
 
 let scoreObject2 = {};
-    scoreObject["Jack"] = 5;
+    scoreObject["Bruno"] = 5;
     scoreObject["Timur"] = 20;
     scoreObject["Olya"] = 100;
     
@@ -250,6 +253,4 @@ let drawCats = function (howManyTimes) {
     }
     return cats;
 };
-let drawCatsString = drawCats(5);
-let drawCatsDiv = document.getElementById("functions");
-drawCatsDiv.textContent = drawCatsString;
+let drawCatsString = drawCats(10);
