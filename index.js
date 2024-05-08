@@ -66,19 +66,34 @@ const randomQuestions = [
 
 // homework to chapter 3 Arrays: compliment generator task 1 + task 2
 
+let pickRandomWord = function (words) {
+    return words[Math.floor(Math.random() * words.length)];
+};
+
 const compliment = ["smart", "nice", "wice", "awesome", "shiny"];
-const randomWordIndex = Math.floor(Math.random() * compliment.length);
-const randomWord = compliment[randomWordIndex]; // Получаем рандомное слово из массива compliment при помощи его индекса
+const randomWord = pickRandomWord(compliment);
 let randomComplimentSpan = document.getElementById("randomComplimentSpan");
 randomComplimentSpan.textContent = randomWord;
 
 
 const complimentLevelUp = ["You are kind and ", "You are beautiful and "];
-const randomWordLevelUpIndex = Math.floor(Math.random()* complimentLevelUp.length); 
-const randomWordLevelUpSentence = complimentLevelUp[randomWordLevelUpIndex];
-
+const randomWordLevelUpSentence = pickRandomWord(complimentLevelUp);
 let randomComplimentLevelUpSpan = document.getElementById("randomComplimentLevelUpSpan");
 randomComplimentLevelUpSpan.textContent = randomWordLevelUpSentence; // Устанавливаем текст в элемент с идентификатором "randomComplimentLevelUpSpan"
+
+//дразнилки
+
+let offenceGenerator = function () {
+    let randomBodyParts = ["глаз", "нос", "череп"];
+    let randomAdjectives = ["вонючая", "унылая", "дурацкая"];
+    let randomWords1 = ["муха", "выдра", "дубина", "мартышка", "крыса"];
+
+    let randomString = "У тебя " + pickRandomWord(randomBodyParts) + " словно " + pickRandomWord(randomAdjectives) + " " + pickRandomWord(randomWords1) + "!!!";
+    return randomString;
+};
+console.log(offenceGenerator());
+console.log(offenceGenerator());
+console.log(offenceGenerator());
 
 // join the numbers: [3, 2, 1] to the string "3 больше, чем 2 больше, чем 1"
 
@@ -95,7 +110,7 @@ let owedMoney = {};
     owedMoney ["Anna"] = 8;
     owedMoney["Jimmy"]+=5
 let objectTasksDiv = document.getElementById("objectTasks");
-objectTasksDiv.textContent = owedMoney["Jimmy"] + " " + JSON.stringify(owedMoney);
+objectTasksDiv.textContent = owedMoney["Jimmy"];
 
 // homework : score counter
 
@@ -121,14 +136,13 @@ console.log(scoreObject1);
 //or
 
 let scoreObject2 = {};
-    scoreObject["Bruno"] = 5;
-    scoreObject["Timur"] = 20;
-    scoreObject["Olya"] = 100;
+    scoreObject2["Bruno"] = 5;
+    scoreObject2["Timur"] = 20;
+    scoreObject2["Olya"] = 100;
     
-    scoreObject2["Timur"] += 20;
-    scoreObject2["Timur"];
+scoreObject2["Timur"] += 20;
+console.log(scoreObject2["Timur"]);
 console.log(scoreObject2);
-
 
 // chapter 4 Objects - number 123 with the help of 1 string code
 
@@ -244,13 +258,3 @@ console.log("No matter, You are nice anyway!");
 }
 
     alert("JavaScript is awesome!"); //alert prompt config приостанавливают работу интерпретатора JS, console.log идет по строке дальше
-
-// chapter 8 Functions
-let drawCats = function (howManyTimes) {
-    let cats = "";
-    for (let i = 0; i < howManyTimes; i++) {
-    cats += i + " =^.^= ";
-    }
-    return cats;
-};
-let drawCatsString = drawCats(10);
