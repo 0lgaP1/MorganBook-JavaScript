@@ -8,49 +8,68 @@
   <body>
     <h1>Hello!</h1>
     <script>
-      let words = ["Оладушек", "пирожок", "булочка", "кексик"];
+      let word = pickWord();
+      let answerArray = setupAnswerArray(word);
+      let remainingLetters = word.length;
 
-      let randomWord = words[Math.floor(Math.random() * words.length)];
+      while (remainingLetters > 0) {
+        showPlayerProgress(answerArray);
+        let guess = getGuess();
 
-      let answerArray = [];
-      for (let i = 0; i < randomWord.length; i++) {
-        answerArray[i] = "_";
-      }
-
-      let remainingLetters = randomWord.length; // decrement if the letter was guessed
-      let attemps = randomWord.length;
-
-      while (remainingLetters > 0 && attemps > 0) {
-        alert(answerArray.join(" "));
-        let guess = prompt("Guess a letter or exit the game");
         if (guess === null) {
           break;
         } else if (guess.length !== 1) {
-          alert("Please pick only one letter!");
+          alert("Пожалуйста, введите одиночную букву.");
         } else {
-          let lowerCaseGuess = guess.toLowerCase();
-          let foundMatch = false;
-
-          for (let j = 0; j < randomWord.length; j++) {
-            if (randomWord[j].toLowerCase() === lowerCaseGuess) {
-              // checking the match of letters
-              answerArray[j] = randomWord[j];
-              remainingLetters--;
-              foundMatch = true;
-            }
-          }
-          if (!foundMatch) {
-            alert("The letter you guessed is not in the word.");
-            attemps--;
-          }
+          let correctGuesses = updateGameState(guess, word, answerArray);
+          remainingLetters -= correctGuesses;
         }
       }
-      if (remainingLetters === 0 ) {
-        alert(answerArray.join(" "));
-        alert("Congratulations, you guessed the word " + randomWord);
+
+      showAnswerAndCongratulatePlayer(answerArray);
+
+      function pickWord() {
+        let words = ["Оладушек", "пирожок", "булочка", "кексик"];
+        return words[Math.floor(Math.random() * words.length)];
       }
-      else {
-        alert("You ran out of attempts. The word was " + randomWord);
+
+      function setupAnswerArray(word) {
+        let answerArray = [];
+        for (let i = 0; i < word.length; i++) {
+          answerArray[i] = "_";
+        }
+        return answerArray;
+      }
+
+      function showPlayerProgress(answerArray) {
+        alert(answerArray.join(" "));
+      }
+
+      function getGuess() {
+        return prompt("Guess a letter or exit the game");
+      }
+
+      function updateGameState(guess, word, answerArray) {
+        let foundMatch = false;
+        for (let j = 0; j < word.length; j++) {
+          if (word[j].toLowerCase() === guess.toLowerCase()) {
+            answerArray[j] = word[j];
+            foundMatch = true;
+          }
+        }
+        if (!foundMatch) {
+          alert("The letter you guessed is not in the word.");
+        }
+        return foundMatch ? 1 : 0;
+      }
+
+      function showAnswerAndCongratulatePlayer(answerArray) {
+        alert(answerArray.join(" "));
+        if (answerArray.indexOf("_") === -1) {
+          alert("Congratulations, you guessed the word " + word);
+        } else {
+          alert("You ran out of attempts. The word was " + word);
+        }
       }
     </script>
   </body>
