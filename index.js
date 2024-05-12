@@ -243,9 +243,9 @@ for (let i = 0; i < input.length; i++) {
     } else {
         output += input[i];
     }
+
 } // switch case may be used here too:  switch (input[i]) {case "a": output += "4"; break; case "e": output += "3"; break; case "i": output += "1"; break; case "o": output += "0"; break; default: output += input[i]; }
 console.log(output);
-
 
     let name = prompt("What is your name?");
     console.log("Hello, " + name);
@@ -258,3 +258,15 @@ console.log("No matter, You are nice anyway!");
 }
 
     alert("JavaScript is awesome!"); //alert prompt config приостанавливают работу интерпретатора JS, console.log идет по строке дальше
+
+    function add(number1, number2) {
+        return number1 + number2;
+    }
+    function multiply(number3, number4) {
+        return number3 * number4;
+}
+
+    let product = multiply(36325, 9842);
+    let result = add(777, product);
+    let functionsDiv = document.getElementById("functions");
+    functionsDiv.textContent = result;
