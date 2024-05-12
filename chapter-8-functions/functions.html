@@ -60,9 +60,6 @@
       let product = multiply(36325, 9842);
       let result = add(777, product);
       console.log(result);
-      let functionsDiv = document.getElementById("functions");
-      functionsDiv.textContent = result;
-
       // task 2
 
       function areArraysSame(array1, array2) {
@@ -83,11 +80,14 @@
       console.log(areArraysSame([1, 2, 3], [1, 2, 3, 4])); // false
 
       // interactive programming chapter 12
+
       let counter01 = 1;
       let printMessage = function () {
         console.log("Ты смотришь в консоль уже " + counter01 + " сек");
-        counter01++;
+        counter01 < 15;
       };
+      
+
       let intervalId = setInterval(printMessage, 1000);
       clearInterval(intervalId);
     </script>

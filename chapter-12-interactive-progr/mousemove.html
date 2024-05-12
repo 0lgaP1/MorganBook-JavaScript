@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="mousemove.css" />
+    <title>Перемещение мышки</title>
+    <style>
+      body {
+        overflow: hidden; /* скрыть полосу прокрутки */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1 id="heading">Hello, world!</h1>
+      <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+      <script>
+        $(document).ready(function () {
+          $(document).mousemove(function (event) {
+            let $heading = $("#heading");
+            let mouseX = event.pageX;
+            let mouseY = event.pageY;
+            let headerWidth = $("#header").width();
+            let headerHeight = $("#header").height();
+
+            // Проверяем, чтобы координаты мыши оставались в пределах области #header
+            if (mouseX >= 0 && mouseX <= $(window).width() - headerWidth) {
+              $heading.css("left", mouseX + "px");
+            }
+            if (mouseY >= 0 && mouseY <= $(window).height() - headerHeight) {
+              $heading.css("top", mouseY + "px");
+            }
+          });
+        });
+
+        $("html").mousemove(function (event) {
+            $("#heading").offset({
+              left: event.pageX,
+              top: event.pageY,
+            });
+          });
+
+      </script>
+    </div>
+  </body>
+</html>
